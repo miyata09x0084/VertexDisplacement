@@ -22,9 +22,9 @@ window.addEventListener('load', function(){
   );
   camera.position.z = 100;
 
-  material = new THREE.MeshBasicMaterial({
-    color: 0xb7ff00,
-    wireframe: true
+  material = new THREE.ShaderMaterial({
+    vertexShader: document.getElementById('vertexShader').textContent,
+    fragmentShader: document.getElementById('fragmentShader').textContent
   })
 
   mesh = new THREE.Mesh(
@@ -45,15 +45,5 @@ window.addEventListener('load', function(){
       renderer.render(scene, camera);
       requestAnimationFrame(render);
     }
-
-
-
-
-
-
-
-
-
-
 
 })
