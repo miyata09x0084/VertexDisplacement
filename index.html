@@ -11,9 +11,20 @@
     <script type="module" src="/main.js"></script>
 
     <script type="x-shader/x-vertex" id="vertexShader">
+      varying vec2 vUc;
+
+      void main() {
+        vUv = uv;
+        gl_Position = projectsionMatrix * modelVireMatrix * vec4(position, 1.0);
+      }
     </script>
 
     <script type="x-shader/x-vertex" id="fragmentShader">
+      varying vec2 vUv;
+
+      void main() {
+        gl_FranColor = vec4(vec3(vUv, 0.), 1.);
+      }
     </script>
 
     <script type="text/javascript" id="mainCode">
